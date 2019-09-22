@@ -17,10 +17,14 @@ def rep_comm(gh):
     return total
 
 def main():
-    gh = input("Enter a valid GitHub username. ")
-    total = rep_comm(gh)
-    for r,c in total.items():
-        print("Repo:",r,"Number of commits:",c)
-
+    while True:
+        try:
+            gh = input("Enter a valid GitHub username. ")
+            total = rep_comm(gh)
+            for r,c in total.items():
+                print("Repo:",r,"Number of commits:",c)
+        except TypeError:
+            print("You did not enter a valid GitHub username.")
+        return
 if __name__ == '__main__':
     main()
